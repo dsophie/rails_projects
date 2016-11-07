@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Caesar Cipher </title>
+        <style>
+            body
+            {
+                background-color: slateblue;
+                font-family: "Century Gothic", sans-serif;
+                line-height: 10px;
+                color: white;
+                padding: 20px;
+            }
+            h1
+            {
+                letter-spacing: 20px;
+            }
+            input
+            {
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1> CAEASAR CIPHER </h1>
+        <hr>
+        <p> Welcome to the Caesar Cipher, encode your messages like a pro!</p>
+        <p> Just enter the message you want to <em> cipher </em> and how many shifts you want for the encoding, it's that simple!</p>
+
+        <form>
+            <input type="text" name="message" /> <br />
+            <input type="text" name="shifts" /> <br />
+            <input type="submit" value="Encrypt!" />
+        </form>
+
+        <p>  <%= result %> </p>
+    </body>
+</html>
