@@ -2,17 +2,19 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 
 get '/' do
-    message = params['message']
-    shifts = params['shifts'].to_i
 
-    if message.nil? == false && shifts.nil? == false
-        string = caesar_cipher(message, shifts)
-        result = "Here is your message encrypted: " + string
-    else
-        result = ""
-    end
+message = params['message']
+shifts = params['shifts'].to_i
 
-    erb :index, :locals => {:result => result}
+if message.nil? == false && shifts.nil? == false
+    string = caesar_cipher(message, shifts)
+    result = "Here is your message encrypted: " + string
+else
+    result = ""
+end
+
+erb :index, :locals => {:result => result}
+
 end
 
 #Cipher algorithm

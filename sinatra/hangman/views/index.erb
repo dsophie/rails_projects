@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Hangman Game </title>
+        
+        <style>
+            body
+            {
+                font-family: Helvetica;
+                background-color: whitesmoke;
+                color: black;
+                padding: 20px;
+                font-weight: 100;
+            }
+            
+            h1
+            {
+                text-transform: uppercase;
+                letter-spacing: 10px;
+            }
+            
+            a
+            {
+                color: black;
+            }
+            
+            #win
+            {
+                color: red;
+                font-size: 25px;
+            }
+            #loose
+            {
+                color: green;
+                font-size: 25px;
+            }
+        </style>
+        
+    </head>
+
+    <body>
+        
+        <h1> Hangman Game! </h1>
+        
+        <hr>
+        
+        <h2> Welcome to the Hangman Game, try to guess a word the computer choose and procrastinate for ever! </h2>
+
+         <p> Word to guess: </p>
+      
+       <p> <% i = 0 %>
+            <% while i < display[2].length %>
+            <%= display[2][i] %> 
+            <% i += 1 %>
+        <% end %>
+        </p>
+       
+        <p> You have used <%= display[1] %> incorrect guesses on 9 </p>
+    
+        <form>
+            <input type="text" name="guess" />
+            <input type="submit" value="Try" />
+
+        </form>
+
+         <p> <%= guess_message %> </p>
+         
+          <p id="loose"> <%= stop_message if stop_message == "You loose!" %> </p>
+          
+          <p id="win"> <%= stop_message if stop_message == "You win!" %> </p>
+     
+        <a href="/"> Start again </a>
+     
+    </body>
+</html>
