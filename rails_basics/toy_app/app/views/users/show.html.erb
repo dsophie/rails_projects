@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+<br />
+
+<p> Microposts by this user:</p>
+
+<tbody>
+    <% @microposts.each do |micropost| %>
+      <tr>
+        <td><%= micropost.content %></td>
+        <td><%= micropost.user_id %></td>
+        <td><%= link_to 'Show', micropost %></td>
+        <td><%= link_to 'Edit', edit_micropost_path(micropost) %></td>
+        <td><%= link_to 'Destroy', micropost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
